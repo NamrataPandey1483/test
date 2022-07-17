@@ -3,24 +3,25 @@ package hackerrank;
 import java.util.HashMap;
 
 public class FurnitureOrder implements FurnitureOrderInterface {
-    /**
-     * TODO: Create a map of Furniture items to order quantities
-     */
-
+    /private HashMap<Furniture,Integer> orderedFurnitures ;
     /**
      * Initialize a new mapping of Furniture types to order quantities.
      */
     FurnitureOrder() {
-        // TODO: Complete the constructor
+       orderedFurnitures = new HashMap<Furniture, Integer>();
     }
 
     public void addToOrder(final Furniture type, final int furnitureCount) {
-        // TODO: Complete the method
+        Integer count = 0;
+        if(furnitures.containsKey(type)) {
+            count = furnitures.get(type);
+        }
+        furnitures.put(type, count + furnitureCount);
     }
 
     public HashMap<Furniture, Integer> getOrderedFurniture() {
-        // TODO: Complete the method
-        return null;
+        
+        return furnitures;
     }
 
     public float getTotalOrderCost() {
@@ -29,8 +30,7 @@ public class FurnitureOrder implements FurnitureOrderInterface {
     }
 
     public int getTypeCount(Furniture type) {
-        // TODO: Complete the method
-        return -1;
+      int count = furnitures.get(type);
     }
 
     public float getTypeCost(Furniture type) {
