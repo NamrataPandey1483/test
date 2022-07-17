@@ -30,7 +30,7 @@ public class FurnitureOrder implements FurnitureOrderInterface {
     }
 
     public int getTypeCount(Furniture type) {
-      int count = furnitures.get(type);
+      int count = Integer.intValue(furnitures.get(type));
     }
 
     public float getTypeCost(Furniture type) {
